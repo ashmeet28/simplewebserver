@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"log"
 	"net/http"
 	"os"
@@ -14,5 +15,7 @@ func main() {
 	case "private":
 		log.Fatal(http.ListenAndServe("127.0.0.1:8080",
 			http.FileServer(http.Dir(os.Args[2]))))
+	default:
+		log.Fatalln(errors.New("public or private argument missing"))
 	}
 }
