@@ -8,14 +8,24 @@ import (
 )
 
 func main() {
+	tlsCertFile := os.Args[2]
+	tlsKeyFile := os.Args[3]
+	fileServerRootDir := os.Args[4]
+
 	switch os.Args[1] {
+
 	case "public":
-		log.Fatal(http.ListenAndServe(":8080",
-			http.FileServer(http.Dir(os.Args[2]))))
+		log.Fatal(http.ListenAndServeTLS(
+			":8080", tlsCertFile, tlsKeyFile,
+			http.FileServer(http.Dir(fileServerRootDir))))
+
 	case "private":
-		log.Fatal(http.ListenAndServe("127.0.0.1:8080",
-			http.FileServer(http.Dir(os.Args[2]))))
+		log.Fatal(http.ListenAndServeTLS(
+			"127.0.0.1:8080", tlsCertFile, tlsKeyFile,
+			http.FileServer(http.Dir(fileServerRootDir))))
+
 	default:
-		log.Fatalln(errors.New("public or private argument missing"))
+		log.Fatalln(errors.New("invalid arguments"))
+
 	}
 }
