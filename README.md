@@ -1,5 +1,5 @@
 # simplewebserver
-Simple web server for serving static files locally.
+Simple web server.
 
 ## Usage
 
