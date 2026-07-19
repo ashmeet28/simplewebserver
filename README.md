@@ -4,7 +4,7 @@ Simple web server.
 ## Usage
 
 ```
-simplewebserver public /mnt/t/simplewebserver/https_cert /mnt/t/simplewebserver/https_key /mnt/t/torrents
+simplewebserver public /mnt/t/simplewebserver/https_cert /mnt/t/simplewebserver/https_key /mnt/t/torrents /prefixforsecurity/
 ```
 
 ```
