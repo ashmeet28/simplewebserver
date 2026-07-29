@@ -7,6 +7,9 @@ Simple web server.
 simplewebserver public /mnt/t/simplewebserver/https_cert /mnt/t/simplewebserver/https_key /mnt/t/torrents /prefixforsecurity/
 ```
 
+The slash in the end of security prefix is important.
+
+
 ```
 rm -r /mnt/t/simplewebserver
 mkdir /mnt/t/simplewebserver
